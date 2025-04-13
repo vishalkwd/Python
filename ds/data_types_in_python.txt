@@ -1,0 +1,16 @@
+1. Basic Data Types in Python: Overview
+2. Integers
+3. Floats
+4. Complex Numbers
+5. Strings
+6. Escape Sequences
+7. Raw Strings
+8. Triple Quoted Strings
+9. Booleans
+10. Functions: Composite Data Types
+11. Functions: Math
+12. Functions: Type Conversion
+13. Functions: Iterables and Iterators
+14. Functions: Input and Output
+15. Functions: Variables, References, and Scope (Part 1)
+16. Functions: Variables, References, and Scope (Part 2)
