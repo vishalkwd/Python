@@ -1,25 +1,24 @@
-def intelligent_substring(s, k, char_set):
-    from itertools import permutations, combinations
+def intelligent_substring(values, k, string):
+    """
+    This function returns a dictionary with the keys being the letters of the alphabet
+    and the values being their corresponding binary representations.
+    """
     keys = 'abcdefghijklmnopqrstuvwxyz'
 
-    map_dict = dict(map(lambda x, y: (x, y), keys, char_set))
-    temp_out = []
-    for total_chars in range(1, len(s)+1, 1):
-        for word_tuples in permutations(s, total_chars):
-            zero_counter = 0
-            if ''.join(word_tuples) in s:
-                for letter in word_tuples:
-                    if int(map_dict.get(letter)) == 0:
-                        zero_counter += 1
-                if zero_counter == k:
-                    temp_out.append(len(''.join(word_tuples)))
-    if len(temp_out) == 0:
-        return 0
+    if len(values) != 26:
+        raise ValueError("The length of values must be 26.")
+
+    map_dict = { key: val for key, val in zip(keys, values) }
+    # map_dict_2 = dict(map(lambda x, y: (x, y), keys, values))
+    # map function -> map(function, iterable)
+    total = sum([int(map_dict.get(i)) for i in string])
+    if total == k:
+        print("Prime word")
     else:
-        return max(temp_out)
+        print("Standard")
 
-k = 2
-char_set = '100000000010000000000000010'
-s = 'giraffe'
 
-print(intelligent_substring(s, k, char_set))
+# values = '000101000010000000000000010'
+# k = 2
+# string = 'abcd'
+# map_dict = intelligent_substring(values, k, string)
